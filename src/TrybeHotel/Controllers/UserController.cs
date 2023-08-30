@@ -26,7 +26,13 @@ namespace TrybeHotel.Controllers
         [HttpPost]
         public IActionResult Add([FromBody] UserDtoInsert user)
         {
-            throw new NotImplementedException();
+            var ifExist = _repository.GetUserByEmail(user.Email!);
+            if (ifExist != null)
+            {
+                return Conflict(new { message = "User email already exists" } ) ;                
+            }
+            var userToInsert = _repository.Add(user);
+            return Created("", userToInsert);
         }
     }
 }

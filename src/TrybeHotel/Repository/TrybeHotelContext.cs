@@ -14,8 +14,15 @@ public class TrybeHotelContext : DbContext, ITrybeHotelContext
     }
     public TrybeHotelContext() { }
     
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {}
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        // base.OnConfiguring(optionsBuilder);
+        if (!optionsBuilder.IsConfigured)
+        {
+            var connectionString = "Server=localhost;Database=TrybeHotel;User=SA;Password=TrybeHotel12!;TrustServerCertificate=True";
+            optionsBuilder.UseSqlServer(connectionString);
+        }
+    }
     protected override void OnModelCreating(ModelBuilder modelBuilder) {}
 
 }
