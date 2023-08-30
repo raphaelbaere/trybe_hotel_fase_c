@@ -265,6 +265,27 @@
           "locations": [
             {
               "resultFile": {
+                "uri": "file:///home/raphael/Trybe/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/CityRepository.cs",
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 12,
+                  "endLine": 43,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
                 "uri": "file:///home/raphael/Trybe/csharp-026-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Repository/BookingRepository.cs",
                 "region": {
                   "startLine": 61,
