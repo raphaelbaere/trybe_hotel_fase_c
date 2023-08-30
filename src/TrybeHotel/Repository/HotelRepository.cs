@@ -20,7 +20,8 @@ namespace TrybeHotel.Repository
                CityId = hotel.CityId,
                Name = hotel.Name,
                Address = hotel.Address,
-               CityName = _context.Cities.First(city => city.CityId == hotel.CityId).Name
+               CityName = _context.Cities.First(city => city.CityId == hotel.CityId).Name,
+               State = _context.Cities.First(city => city.CityId == hotel.CityId).State,
             }).ToList();
             return allHotels;
         }
